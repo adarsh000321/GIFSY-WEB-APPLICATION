@@ -1,0 +1,27 @@
+<%-include("../partials/header")%>
+    <div class=" container">
+
+        <div class="jumbotron text-center">
+            <h2><span class="gifsy-icon">&#xf1c5;</span>   Welcome To Gifsy!</h2>
+            <p class="lead">Upload your favourite GIFs and share them with the world</p>
+            <a class="btn btn-primary btn-lg show-upload-btn" href="/gif-upload" role="button"><span style="font-family: fontawesome;">&#xf093;<span> Upload Now</a>
+        </div>
+
+        <h3>GIFs uploaded by <%=username%></h3>
+        <div class="gif-container row">
+        
+        </div>
+        <div class="container text-center" style="margin-bottom:30px ;">
+            <button onclick="visitPrev();" class="btn btn-secondary btn-p-n">Prev</button>
+            <button onclick="visitNext();" class="btn btn-secondary btn-p-n">Next</button>
+        </div>
+
+    </div>
+    
+
+    <script>
+        const username = "<%=username%>"
+        const page = Number("<%=page%>");
+    </script>
+    <script src="/js/showall.js"></script>
+<%-include("../partials/footer")%>

@@ -1,0 +1,39 @@
+<%- include("../partials/header") %> <!--wrt to public dir-->
+
+        <!-- form -->
+<div class="form-bg">
+    <div class="container">
+        <form action="/search" method="GET" class="form-inline justify-content-center">
+            <input type="text" name="q" autocomplete="off" placeholder="&#xf002; Search for GIFs" class="form-control search-bar">
+            <button class="search-btn btn btn-primary">Search</i></button>
+            <select name="server" class="select-server form-control">
+                <option value="TENOR"  >TENOR Server</option>
+                <option value="GIFSY" >GIFSY Server</option>
+            </select>
+        </form>
+    </div>
+</div>
+
+<!-- gifs -->
+<div class="container">
+    <h4 class="heading"><strong><%=title%> GIFs</strong></h4>
+    <div class="gif-container row">
+        <!-- <div>
+            <img src="https://media.tenor.com/images/23a190c0e47baab6aa9209b5cfa9ed0b/tenor.gif" alt="">
+        </div> -->
+    </div>
+    <div>
+        <!-- <img src="/img/loading.gif" alt="loading..." id="loadMore"> -->
+        <p id="loadMore">loading...</p>
+    </div>
+</div>
+        <!-- In HTML 5, it is totally valid to have custom attributes prefixed with data- -->
+        <div id="search-term" data-search="<%=title%>"></div>
+    
+    <script>
+        const server = "<%=server%>";
+    </script>
+    <script src="/js/search.js"></script>
+    <%- include("../partials/footer") %> <!--wrt to public dir-->
+
+

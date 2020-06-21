@@ -1,0 +1,239 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.search-bar{
+    font-family: fontawesome;
+    width: 900px !important;
+    max-width: 70%;
+    margin: 30px 10px 30px 0px;
+    box-sizing: border-box;
+}
+
+.select-server{
+   margin: 30px 0px 30px 15px;
+   height: 34px;
+   border: none;
+   background-color: #c0c0c0;
+   border-radius: 2px;
+   color: white;
+   max-width: 14%;
+   box-sizing: border-box;
+}
+
+
+
+.search-btn{
+background-color: #c0c0c0;
+border: none;
+max-width: 10%;
+box-sizing: border-box;
+overflow: hidden;
+}
+.search-btn:hover{
+    background-color: #808080 !important;
+    border: 1px solid #808080;
+}
+
+.form-bg{
+    background-color: #e0e0e0;
+    height: 100px;
+    margin: 0px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.gif-container{
+    margin: 30px 0px;
+}
+
+.navbar{
+    font-size: 1.3rem;
+    background-color: white !important;
+}
+
+.heading{
+    margin: 30px 10px;
+}
+
+.col-lg-3{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0 0 0;
+}
+
+.col-lg-3:hover{
+    cursor: pointer;
+}
+
+#upload-icon{
+    font-family: fontawesome;
+}
+
+
+/* login css */
+
+#login-heading{
+    text-align: center;
+    margin: 50px 0px;
+}
+
+.login{
+    max-width: 600px;
+    line-height: 2rem;
+}
+
+.login-btn{
+    background-color: #a0a0a0;
+    border: none;
+}
+
+.login-btn:hover{
+    background-color: #808080 !important;
+    border: 1px solid #808080;
+}
+
+/* upload */
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+ }
+.files{ position:relative}
+.files:after {  pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url("../img/upload.png");
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.color input{ background-color:#f1f1f1;}
+
+
+/* show page tenor */
+.show-tenor-gif{
+    margin: 60px 0px;
+}
+
+.tenor-gif-details{
+    margin: 20px 0px;
+}
+
+.share-url{
+    margin: 30px;
+    padding:15px;
+    border: solid #d4d8d8 1px;
+    max-width: 600px;
+    overflow: scroll;
+}
+
+.coloumn{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0 30px 0;
+}
+
+
+/* show gif - GIFSY */
+
+
+#delete-icon{
+    font-family: fontawesome;
+}
+
+#edit, .edit-form-btn{
+    background-color: #a0a0a0;
+    border: none;
+    margin-right: 20px ;
+}
+
+#edit, .edit-form-btn:hover{
+    background-color: #808080 !important;
+    border: 1px solid #808080;
+}
+
+.delete-form{
+    display: inline;
+}
+
+.owner-options{
+    margin: 30px 0;
+}
+
+/* show-all */
+
+.jumbotron{
+    background:url("../img/bg.gif");
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.gifsy-icon{
+    font-family: fontawesome; 
+}
+
+.lead{
+    color: #474343;
+    margin:20px 0px ;
+}
+
+.show-upload-btn{
+    background-color: #f346e5;
+    border: none;
+    margin-right: 20px ;
+}
+
+.show-upload-btn:hover{
+    background-color: #fd13a4 !important;
+    border: 1px solid #fd13a4;
+}
+
+.btn-p-n{
+    border-radius: 1px;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    padding:30px ;
+    border: none;
+}
+
+.show-btn{
+    background-color: #a0a0a0;
+    border: none;
+}
+
+.show-btn:hover{
+    background-color: #808080 !important;
+    border: 1px solid #808080;
+}
+
+/* about page */
+.about{
+    margin: 60px;
+}
+
+.about .jumbotron{
+    background:url("../img/bg.gif");
+    border-radius: 20px;
+    margin-top: 30px;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%> - GIFSY</title>
+    <link rel="icon" href="/img/gif-logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0a8395b071.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <!-- Brand -->
+        <div class="container">
+            <a class="navbar-brand" href="/"><strong>GIFSY</strong></a>
+            
+            <!-- Links -->
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item <%=typeof page!=="undefined" && page==="home"?"active":""%>">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item <%=typeof page!=="undefined" && page==="about"?"active":""%>">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item <%=typeof page!=="undefined" && page==="upload"?"active":""%>">
+                        <a class="nav-link upload-btn" href="/gif-upload"><span id="upload-icon">&#xf093;</span> Upload</a>
+                    </li>
+                    <% if(typeof user!=="undefined" && user){ %>
+                        <li class="nav-item <%=typeof page!=="undefined" && page==="login"?"active":""%>">
+                            <a class="nav-link" href="/user/logout">Logout</a>
+                        </li>
+                        <!-- dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                              <span style="font-family: fontawesome;">&#xf007;</span>
+                            </a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="/gif/show-all/<%=user.username%>">Profile</a>
+                            </div>
+                          </li>
+                    <% }else { %>
+                        <li class="nav-item <%=typeof page!=="undefined" && page==="login"?"active":""%>">
+                        <a class="nav-link" href="/user/login">Login</a>
+                        </li>
+                        <li class="nav-item <%=typeof page!=="undefined" && page==="signup"?"active":""%>">
+                        <a class="nav-link" href="/user/sign-up">Sign Up</a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+
+    <% if(err && err.length>0){%>
+        <div class="container mt-3">
+            <div class="alert alert-danger" role="alert">
+                <%=err%>
+            </div>
+        </div>
+    <% }else if(success && success.length>0){ %>
+        <div class="container mt-3">
+            <div class="alert alert-success" role="alert">
+                <%=success%>
+            </div>
+        </div>
+    <% } %>

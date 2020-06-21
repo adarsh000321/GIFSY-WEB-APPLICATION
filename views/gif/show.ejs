@@ -1,0 +1,80 @@
+<%- include("../partials/header") %> <!--wrt to public dir-->
+
+
+<!-- form -->
+<div class="form-bg">
+    <div class="container">
+        <form action="/search" method="GET" class="form-inline justify-content-center">
+            <input type="text" name="q" autocomplete="off" placeholder="&#xf002; Search for GIFs" class="form-control search-bar">
+            <button class="search-btn btn btn-primary">Search</i></button>
+            <select name="server" class="select-server form-control">
+                <option value="TENOR"  >TENOR Server</option>
+                <option value="GIFSY" >GIFSY Server</option>
+            </select>
+        </form>
+    </div>
+</div>
+
+    
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 show-tenor-gif">
+                <div>
+                    <img src="/gif/<%=gif.name%>" alt="" class="img-thumbnail">
+                </div>
+                
+                <%if(user._id.toString()===owner._id.toString()){%>
+                    <div class="owner-options">
+                        <button id="edit" class="btn-primary btn">Edit</button>
+                        <form action="/gif/<%=gif.name%>?_method=DELETE" method="POST" class="delete-form">
+                            <button class="btn-danger btn delete-btn"><span id="delete-icon">&#xf06d;</span> Delete</button>
+                        </form>
+                    </div>
+                <% } %>
+                
+                
+                <div class="gif-details">
+                    <p class="tenor-gif-details"><strong>Share URL</strong></p>
+                    <div class="share-url"></div>
+                    <p class="tenor-gif-details"><strong>Details</strong></p>
+                    <div>
+                        <p class="">Title : <%=title%></p>
+                        <p class="">Created At : <em id="date"></em></p>
+                        <p class="">Created By : <%=owner.username%></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 ">
+                <div class="row gif-container">
+                    <div class="col-lg-12">
+                        <h4 class="coloumn">Related GIFs</h4>
+                    </div>
+                    <!-- <div class="col-lg-12 col-md-6">
+                        <img src="/img/tenor.gif" alt="" class="coloumn">
+                    </div>
+                    <div class="col-lg-12 col-md-6">
+                        <img src="/img/tenor.gif" alt="" class="coloumn">
+                    </div>
+                    <div class="col-lg-12 col-md-6">
+                        <img src="/img/tenor.gif" alt="" class="coloumn">
+                    </div>
+                    <div class="col-lg-12 col-md-6">
+                        <img src="/img/tenor.gif" alt="" class="coloumn">
+                    </div>
+                    <div class="col-lg-12 col-md-6">
+                        <img src="/img/tenor.gif" alt="" class="coloumn">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const name = "<%=gif.name%>";
+        const title = "<%=gif.title%>";
+        const keywords = "<%=gif.keyWords%>";
+        const date = "<%=gif.createdAt%>";
+        let search;
+    </script>
+    <script src="/js/show.js"></script>
+<%- include("../partials/footer") %> <!--wrt to public dir-->

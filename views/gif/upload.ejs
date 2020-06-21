@@ -1,0 +1,26 @@
+<%-include("../partials/header")%>
+<div class="container login">
+    <h3 id="login-heading">Please upload .gif file ( Max. Size: 1.5 mb )</h3>
+    <form action="/gif-upload" enctype="multipart/form-data" method="POST">
+
+        <!-- <input type="file" required name="gif"> -->
+
+        <div class="form-group files">
+            <label>Upload Your File </label>
+            <input type="file" class="form-control" name="gif">
+        </div>
+
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" placeholder="title" required name="title" id="title" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="keywords">Keywords (Tags)</label>
+            <input type="text" placeholder="keywords (,) separated" name="keyWords" id="keywords" class="form-control">
+        </div>
+        
+        <button type="submit" class="btn btn-primary login-btn">Submit</button>    </form>
+</div>
+<%-include("../partials/footer")%>

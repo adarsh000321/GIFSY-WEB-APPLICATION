@@ -1,0 +1,19 @@
+<%-include("../partials/header")%>
+<div class="container login">
+    <h2 id="login-heading">Welcome Back To GIFSY!</h2>
+    <form action="/user/login" method="POST">
+        <div class="form-group">
+            <label for="username">Enter Username/Email</label>
+            <input type="text" placeholder="email/username" name = "username" id="username" class="form-control" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name = "password" placeholder="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary login-btn">Submit</button>
+        <a href="/user/forgot" class="pull-right" style="color: gray;"><strong>Forgot Password!</strong></a>
+    </form>
+</div>
+    
+<%-include("../partials/footer")%>

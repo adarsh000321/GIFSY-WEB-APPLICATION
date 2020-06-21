@@ -1,0 +1,12 @@
+<%-include("../partials/header")%>
+<div class="container login">
+    <h2 id="login-heading">Reset Password</h2>
+    <form action="\reset\<%=token%>?_method=patch" method="POST">
+        <div class="form-group">
+            <label for="password">Enter New Password</label>
+            <input type="password" placeholder="password" name = "password" id="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary login-btn">Update Password</button>
+    </form>
+</div>
+<%-include("../partials/footer")%>

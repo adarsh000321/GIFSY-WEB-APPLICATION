@@ -1,0 +1,42 @@
+<%- include("../partials/header")%>
+
+    <div class="container">
+        <div class="about text-center">
+            <h5><%= new Date().toString()%></h5>
+            <div class="jumbotron">
+                <h2><span class="gifsy-icon">&#xf1c5;</span>   Read About Gifsy!</h2>
+                <p class="lead">GIFSY, a way to bring smiles in the world! </p>
+                <h5 style="margin-top: 30px;">Creating this website was fun. I was just trying to enhance my backend and I still am. Seems like, I am improving.</h5>
+                
+                <h1 style="margin: 30px 0px; border-bottom: 2px solid black ;">Backend Stack</h1>
+
+                <ul style="list-style: none;" class="text-left">
+                    <li><strong>NodeJS : </strong>NodeJS is used as a runtime environment for creating servers, used 
+                        for making get/post requests and send responses accoringly. </li>
+                    <li><strong>Mongodb : </strong>Mongodb is used for storing user information and info about 
+                        thier uploads (gifs). Gifs uploaded, are stored in separate server.</li>
+                    <li><strong>ExpressJS : </strong> Express framework is used to handel http requests (created http server) form 
+                        the client-side and sending responses accordingly.</li>
+                    <li><strong>Popular Node Packages : </strong><em>Mongoose </em> (to operate database from node 
+                        environment), <em>JSON Webtoken (JWT) and bcrypt</em> (JWT for creating token for session
+                         authentication and bcrypt for handeling password hashing), <em>Nodemailer</em> (for sending emails to users).</li>
+                </ul>
+
+                <h1 style="margin: 30px 0px; border-bottom: 2px solid black ;">Frontend Stack</h1>
+                <ul style="list-style: none;" class="text-left">
+                    <li>Frontend is not very heavy but still worth metioning.</li>
+                    <li><strong>Html : </strong>Building block , as you all know , is our HTML.</li>
+                    <li><strong>CSS : </strong>CSS is used for creating and manipulating styles.</li>
+                    <li><strong>Javascript : </strong>JS is used for DOM manipulations and writing scripts for the client.</li>
+                    <li><strong>Bootstarp : </strong>Bootstrap 4 is used for styling purposes.</li>
+                    <li><strong>Font Awesome :</strong>Some of the icons are for Font Awesome library.</li>
+                    <li><strong>Google Font : </strong>"Raleway" font, taken from google fonts, is used as font-family.</li>
+                </ul>
+                <p style="margin-top: 50px;"><strong>Contact (LinkedIn) : </strong><a href="https://www.linkedin.com/in/adarsh-kanojiya-a81524164/" style="color: black;">Click Here</a></p>
+            </div>
+        </div>
+
+            
+    </div>
+
+<%- include("../partials/footer")%>
