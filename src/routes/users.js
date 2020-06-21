@@ -44,7 +44,7 @@ router.post("/user/sign-up",async (req,res)=>{
             user.verificationToken = verify_token;
             await user.save();
             
-            const url = `http://localhost:8080/verify/${verify_token}`;
+            const url = `${req.get("origin")}/verify/${verify_token}`;
             //send email
             await mail.sendVerificationMail(user,url);
 
@@ -144,7 +144,7 @@ router.post("/user/forgot",async (req,res)=>{
         if(!user)throw Error("Invalid Email Address");
         user.forgotPasswordToken = User.getRandomToken();
         await user.save();
-        const url = `http://localhost:8080/reset/${user.forgotPasswordToken}`;
+        const url = `${req.get("origin")}/reset/${user.forgotPasswordToken}`;
         await mail.sendForgotPasswordMail(user,url);
 
         req.flash("success","Reset password link has been sent to your email address!");
