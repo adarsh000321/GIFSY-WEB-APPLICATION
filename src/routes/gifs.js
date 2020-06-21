@@ -28,7 +28,7 @@ const upload = multer({
     // dest:"gif",  // (use dest or storage)
     storage:storage, // setting file name and storage 
     limits:{
-        fileSize:1024*1024*512 // 1.5mb
+        fileSize:1024*1024*1.5 // 1.5mb
     },
     fileFilter(req,file,cb){
         if(!file.originalname.match(/\.gif$/)){

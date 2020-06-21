@@ -3,8 +3,8 @@ let skip = 0; //only for db
 const gifContainer = document.querySelector(".gif-container");// contains all gifs
 const loadMore = document.querySelector("#loadMore"); //loading gif
 const limit = 50;
-const URLTenor =  `http://localhost:8080/get-more?q=${search}&limit=${limit}&`;
-const URLGifsy = `http://localhost:8080/searchdb?search=${search}&limit=${limit}&`;
+const URLTenor =  `http://${window.location.host}/get-more?q=${search}&limit=${limit}&`;
+const URLGifsy = `http://${window.location.host}/searchdb?search=${search}&limit=${limit}&`;
 let URL;
 let loading = false;
 let next;//4
@@ -65,7 +65,7 @@ function loadContent(){
                 const parsedGif = JSON.parse(sessionStorage.getItem(this.id)); // get data from session
                 //create form and post data on click
                 const form = document.createElement("form");
-                form.action = "http://localhost:8080/show-tenor-gif";
+                form.action = `http://${window.location.host}/show-tenor-gif`;
                 form.method = "POST";
                 for(const key in parsedGif){
                     const input = document.createElement("input");
@@ -102,12 +102,12 @@ function loadDB(){
             a.setAttribute("id",`db-${db_ids}`); // form of ids = db-0,db-1...
             div.className="col-lg-3 col-md-4 col-sm-6 card";
             const img = document.createElement("img");
-            const gifUrl = `http://localhost:8080/gif/${gif.name}`;
+            const gifUrl = `http://${window.location.host}/gif/${gif.name}`;
             img.setAttribute("src",gifUrl);
             img.className="rounded img-thumbnail";
             // img.style="max-width:300px; margin-right:10px";
             a.appendChild(img);
-            a.href=`http://localhost:8080/show/gif/${gif.name}`;
+            a.href=`http://${window.location.host}/show/gif/${gif.name}`;
             div.appendChild(a);
             gifContainer.appendChild(div);
             // // querySelector cannot select element with id, starting with a number
