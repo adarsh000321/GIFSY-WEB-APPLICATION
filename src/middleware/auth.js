@@ -14,7 +14,7 @@ const auth = async (req,res,next)=>{
         req.token =token;
         next();
     }catch(e){
-        next(new Error(e));
+        next(new Error("Login Error!"));
     }
 };
 
