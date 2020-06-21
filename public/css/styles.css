@@ -235,5 +235,10 @@ overflow: hidden;
     background:url("../img/bg.gif");
     border-radius: 20px;
     margin-top: 30px;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+}
+
+.about{
+    background-size: cover;
+    background-repeat: repeat;
 }
