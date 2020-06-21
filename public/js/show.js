@@ -1,7 +1,7 @@
 document.querySelector(".share-url").textContent=window.location.href;
 const editBtn = document.querySelector("#edit");
 const limit = 6;
-let URL=`http://${window.location.host}/random?q=${search}&limit=${limit}`;
+let URL=`https://${window.location.host}/random?q=${search}&limit=${limit}`;
 const gifContainer = document.querySelector(".gif-container");
 let tenor_ids=0;
 
@@ -51,7 +51,7 @@ function loadContent(){
                 const parsedGif = JSON.parse(sessionStorage.getItem(this.id)); // get data from session
                 //create form and post data on click
                 const form = document.createElement("form");
-                form.action = `http://${window.location.host}/show-tenor-gif`;
+                form.action = `https://${window.location.host}/show-tenor-gif`;
                 form.method = "POST";
                 for(const key in parsedGif){
                     const input = document.createElement("input");
