@@ -38,6 +38,19 @@ router.post("/user/sign-up",async (req,res)=>{
         res.redirect("/");
     }catch(e){
        try{
+            const findUser = await User.findOne({email:req.body.email});
+            if(findUser){
+                if(findUser.active)throw new Error("Email already registered");
+                else {
+                    const url = `${req.get("origin")}/verify/${findUser.verificationToken}`;
+                    //send email
+                    await mail.sendVerificationMail(findUser,url);
+
+                    req.flash("success","An email has been sent to your email address. Please verify your account!");
+                    res.status(201).redirect("/user/login");
+                }
+                return;
+            }
             const user = new User(req.body);
             user.active=false; // set to false
             const verify_token = User.getRandomToken();
