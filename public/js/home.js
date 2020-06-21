@@ -1,5 +1,5 @@
 
-const URL =  `https://${window.location.host}/get-more`;
+const URL =  `${window.location.origin}/get-more`;
 const gifContainer = document.querySelector(".gif-container");// contains all gifs
 const loadMore = document.querySelector("#loadMore"); //loading gif
 const limit = 50;
@@ -46,7 +46,7 @@ function loadContent(){
                 const parsedGif = JSON.parse(sessionStorage.getItem(this.id)); // get data from session
                 //create form and post data on click
                 const form = document.createElement("form");
-                form.action = `https://${window.location.host}/show-tenor-gif`;
+                form.action = `${window.location.origin}/show-tenor-gif`;
                 form.method = "POST";
                 for(const key in parsedGif){
                     const input = document.createElement("input");

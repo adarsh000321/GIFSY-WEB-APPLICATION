@@ -8,19 +8,19 @@ loadMore();
 function visitPrev(){
     const prev = Math.max(1,page-1);
     if(prev===page)return;
-    window.location=`https://${window.location.host}/gif/show-all/${username}/${prev}`;
+    window.location=`${window.location.origin}/gif/show-all/${username}/${prev}`;
 }
 function visitNext(){
     const next = page + 1;
-    window.location=`https://${window.location.host}/gif/show-all/${username}/${next}`;
+    window.location=`${window.location.origin}/gif/show-all/${username}/${next}`;
 }
 
  function loadMore(){
-    fetch(`https://${window.location.host}/gif-json/${username}?limit=${limit}&skip=${skip}`)
+    fetch(`${window.location.origin}/gif-json/${username}?limit=${limit}&skip=${skip}`)
     .then(res=>res.json())
     .then(gifs=>{
         if(gifs.length==0 && page!==1){
-            window.location=`https://${window.location.host}/gif/show-all/${username}/1`;
+            window.location=`${window.location.origin}/gif/show-all/${username}/1`;
             return;
         }
         gifs.forEach((gif)=>{
